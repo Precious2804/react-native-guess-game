@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Alert, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Alert, KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
 import Card from '../components/Card';
 import InstructionText from '../components/InstructionText';
 import PrimaryButton from '../components/PrimaryButton'
@@ -28,29 +28,33 @@ export default function StartGameScreen({ onPicked }) {
         setNumber('')
     }
     return (
-        <View style={styles.container}>
-            <Title title="Number Guessing Game" />
-            <Card>
-                <View style={styles.inputView}>
-                    <InstructionText>Enter a Number Here</InstructionText>
-                    <TextInput
-                        style={styles.numberInput}
-                        maxLength={2}
-                        keyboardType="number-pad"
-                        value={number}
-                        onChangeText={inputtedHandler}
-                    />
+        <ScrollView style={{ flex: 1 }}>
+            <KeyboardAvoidingView style={{ flex: 1 }} behavior="position">
+                <View style={styles.container}>
+                    <Title title="Number Guessing Game" />
+                    <Card>
+                        <View style={styles.inputView}>
+                            <InstructionText>Enter a Number Here</InstructionText>
+                            <TextInput
+                                style={styles.numberInput}
+                                maxLength={2}
+                                keyboardType="number-pad"
+                                value={number}
+                                onChangeText={inputtedHandler}
+                            />
+                        </View>
+                        <View style={styles.btnView}>
+                            <View style={styles.btnItem}>
+                                <PrimaryButton btn_title="Reset" onPressFunction={resetHandler} />
+                            </View>
+                            <View style={styles.btnItem}>
+                                <PrimaryButton onPressFunction={confirmInputHandler} btn_title="Confirm" />
+                            </View>
+                        </View>
+                    </Card>
                 </View>
-                <View style={styles.btnView}>
-                    <View style={styles.btnItem}>
-                        <PrimaryButton btn_title="Reset" onPressFunction={resetHandler} />
-                    </View>
-                    <View style={styles.btnItem}>
-                        <PrimaryButton onPressFunction={confirmInputHandler} btn_title="Confirm" />
-                    </View>
-                </View>
-            </Card>
-        </View>
+            </KeyboardAvoidingView>
+        </ScrollView>
     )
 }
 
@@ -58,7 +62,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        paddingVertical: 40,
         paddingHorizontal: 18,
     },
 

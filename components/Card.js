@@ -13,6 +13,8 @@ export default function Card({ children }) {
 
 const styles = StyleSheet.create({
     cardContainer: {
+        // maxWidth: "95%",
+        width: '95%',
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
