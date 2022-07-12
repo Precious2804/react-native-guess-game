@@ -18,7 +18,9 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         marginVertical: 24,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        maxWidth: "95%",
+        width: 400
     },
     numberValue: {
         color: Colors.secondary100,

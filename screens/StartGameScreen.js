@@ -29,9 +29,7 @@ export default function StartGameScreen({ onPicked }) {
     }
     return (
         <View style={styles.container}>
-            <View style={styles.titleView}>
-                <Title title="Number Guessing Game" />
-            </View>
+            <Title title="Number Guessing Game" />
             <Card>
                 <View style={styles.inputView}>
                     <InstructionText>Enter a Number Here</InstructionText>
@@ -59,12 +57,9 @@ export default function StartGameScreen({ onPicked }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 15,
-        justifyContent: 'center'
-    },
-    titleView: {
-        marginTop: 30,
-        marginBottom: 30,
+        alignItems: 'center',
+        paddingVertical: 40,
+        paddingHorizontal: 18,
     },
 
     inputView: {

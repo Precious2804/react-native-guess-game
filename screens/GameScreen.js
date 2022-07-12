@@ -60,9 +60,7 @@ export default function GameScreen({ userNumber, onGameOver }) {
 
     return (
         <View style={styles.gameContainer}>
-            <View style={styles.titleView}>
-                <Title title="Opponent's Guess" />
-            </View>
+            <Title title="Opponent's Guess" />
             <NumberContainer numValue={currentGuess} />
             <Card>
                 <View style={styles.gameBody}>
@@ -79,9 +77,6 @@ export default function GameScreen({ userNumber, onGameOver }) {
             </Card>
 
             <View style={styles.logStyle}>
-                <View style={styles.titleView}>
-                    <Title title="Log Rounds" />
-                </View>
                 <FlatList
                     data={guessRounds}
                     renderItem={(itemData) => {
@@ -94,7 +89,7 @@ export default function GameScreen({ userNumber, onGameOver }) {
                             </>
                         )
                     }}
-                    keyExtractor={(index) => {
+                    keyExtractor={(item, index) => {
                         return index;
                     }} />
             </View>
@@ -108,10 +103,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingVertical: 40,
         paddingHorizontal: 18,
-    },
-
-    titleView: {
-        marginBottom: 8
+        alignItems: 'center'
     },
 
     gameBody: {
@@ -131,7 +123,8 @@ const styles = StyleSheet.create({
     logStyle: {
         flex: 1,
         flexGrow: 1,
-        marginTop: 25,
+        alignItems: 'center',
+        marginTop: 10,
     },
 
     logTitle: {
@@ -157,6 +150,8 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 0 },
         shadowOpacity: 0.25,
         shadowRadius: 3,
+        maxWidth: "100%",
+        width: 400,
     },
 
     rndNumber: {

@@ -1,10 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Colors from '../constants/colors';
 
-export default function Title({title}) {
+export default function Title({ title }) {
     return (
-        <Text style={styles.title}>{title}</Text>
+        <View style={styles.titleView}>
+            <Text style={styles.title}>{title}</Text>
+        </View>
     )
 }
 
@@ -17,6 +19,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         borderWidth: 1,
         borderColor: '#FFFFFF',
-        padding: 12
-    }
+        padding: 12,
+    },
+
+    titleView: {
+        marginTop: 30,
+        marginBottom: 20,
+        maxWidth: '90%',
+        width: 400
+    },
 });

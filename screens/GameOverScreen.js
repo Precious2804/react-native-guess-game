@@ -4,12 +4,10 @@ import PrimaryButton from '../components/PrimaryButton';
 import Title from '../components/Title'
 import Colors from '../constants/colors';
 
-export default function GameOverScreen({roundsNumber, userNumber, onStartNewGame}) {
+export default function GameOverScreen({ roundsNumber, userNumber, onStartNewGame }) {
   return (
     <View style={styles.container}>
-      <View style={styles.titleView}>
-        <Title title="Correct Guess! Congratulations" />
-      </View>
+      <Title title="Correct Guess! Congratulations" />
       <View style={styles.imageContainer}>
         <Image source={require('../assets/images/success.png')} style={styles.imageStyle} />
       </View>
@@ -52,7 +50,7 @@ const styles = StyleSheet.create({
     height: "100%"
   },
 
-  gameMessage:{
+  gameMessage: {
     marginBottom: 25
   },
 
